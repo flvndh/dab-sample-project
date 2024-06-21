@@ -1,0 +1,33 @@
+# yaml-language-server: $schema=bundle_config_schema.json
+
+bundle:
+  name: pridex
+
+targets:
+  dev:
+    mode: development
+    default: true
+
+artifacts:
+  library:
+    type: whl
+    build: poetry build --format wheel
+
+resources:
+  jobs:
+    sample_job:
+      name: sample_job
+
+      environments:
+        - environment_key: sample_env
+          spec:
+            client: "1"
+            dependencies:
+              - dist/*.whl
+
+      tasks:
+        - task_key: sample_task
+          environment_key: sample_env
+          python_wheel_task:
+            package_name: dab_sample_project
+            entry_point: job_1

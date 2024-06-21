@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "dab-sample-project"
+version = "0.1.0"
+description = ""
+authors = []
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+[tool.poetry.scripts]
+job_1 = "dab_sample_project.job:job_1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
