@@ -1,0 +1,27 @@
+#!/usr/bin/bash
+
+set -e
+
+
+function step() {
+  # Reproduce a given step
+  # Usage: ./Taskfile step <step_number>
+
+  git checkout "step_${1}"
+
+
+  if [ ! -v DATABRICKS_HOST ]; then
+    echo "Please set DATABRICKS_HOST environment variable"
+    exit 1
+  fi
+
+  if [ ! -v DATABRICKS_TOKEN ]; then
+    echo "Please set DATABRICK_TOKEN environment variable"
+    exit 1
+  fi
+
+  databricks bundle deploy
+  databricks bundle run sample_job
+}
+
+"${@}"
