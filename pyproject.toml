@@ -1,5 +1,6 @@
 [tool.poetry]
 name = "dab-sample-project"
+# Version not updated while scripts are
 version = "0.1.0"
 description = ""
 authors = []
@@ -10,6 +11,7 @@ python = "^3.10"
 
 [tool.poetry.scripts]
 job_1 = "dab_sample_project.job:job_1"
+job_2 = "dab_sample_project.job:job_2"
 
 [build-system]
 requires = ["poetry-core"]

@@ -30,4 +30,4 @@ resources:
           environment_key: sample_env
           python_wheel_task:
             package_name: dab_sample_project
-            entry_point: job_1
+            entry_point: job_2
