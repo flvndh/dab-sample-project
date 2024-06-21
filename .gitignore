@@ -1,0 +1,13 @@
+# Environment
+.env
+.envrc
+
+# Python
+.venv
+__pycache__
+dist
+pyrightconfig.json
+
+# Databricks
+.databricks
+
